@@ -682,7 +682,7 @@
     "## Follow the instruction below:\n",
     "* 1st Reload the web page\n",
     "* 2nd Select the dropdown menu to choose for the number of forecast hours\n",
-    "* 3rd Wait 5 minutes for the graph to update    "
+    "* 3rd Wait for 5 minutes for the graph to update    "
    ]
   },
   {
@@ -693,7 +693,7 @@
     {
      "data": {
       "application/vnd.jupyter.widget-view+json": {
-       "model_id": "1f7b8d2a4a684ccd9470aaf9e7fd7410",
+       "model_id": "7c3bb0b8bd454b03b64f57c126d7e949",
        "version_major": 2,
        "version_minor": 0
       },
@@ -707,21 +707,12 @@
     {
      "data": {
       "application/vnd.jupyter.widget-view+json": {
-       "model_id": "270424d6efc443f4aec50099d267b718",
+       "model_id": "89e62bb4cde4490185ffb7e793742db6",
        "version_major": 2,
        "version_minor": 0
       },
       "text/plain": [
        "Output()"
-      ]
-     },
-     "metadata": {},
-     "output_type": "display_data"
-    },
-    {
-     "data": {
-      "text/plain": [
-       "<Figure size 1440x360 with 0 Axes>"
       ]
      },
      "metadata": {},
@@ -764,9 +755,8 @@
     "    save_all_data    = pd.DataFrame(columns = ['Power','Predict','ghi'])\n",
     "    current_hour = datetime.utcnow().hour\n",
     "    \n",
-    "    # modbus\n",
-    "    host_ip = \"80.113.19.27\"\n",
-    "    #host_ip = \"192.168.110.7\"\n",
+    "    # modbus \n",
+    "    host_ip = \"192.168.110.7\"\n",
     "    port = 22\n",
     "    password = \"controlsystem\"\n",
     "    username = \"pi\"\n",
@@ -774,8 +764,8 @@
     "    # cyclic data \n",
     "    tz = 'UTC'\n",
     "    lat, lon = 51.98787601885725, 5.950209138832937\n",
-    "    first_doy= '1/1/2022'\n",
-    "    first_dony = '01/01/2023'\n",
+    "    first_doy= '1/1/2021'\n",
+    "    first_dony = '01/01/2022'\n",
     "    \n",
     "    # weather key\n",
     "    key ='266ce473d7380cc2c38154ddee0f5a12'\n",
@@ -918,7 +908,7 @@
     "                plt.plot(ghi_data/1.2,'o',label='Clear_sky model')\n",
     "                plt.grid()\n",
     "                plt.legend(loc=\"best\",prop={'size':14})\n",
-    "                plt.xlabel(\"Time (month-day hour in GMT+0)\")\n",
+    "                plt.xlabel(\"Time\")\n",
     "                plt.ylabel(\"Solar Power [W/m2]\")\n",
     "                        #pl.plot(xs,ys)\n",
     "                        #pl.plot(xs,ys2)\n",
@@ -963,13 +953,6 @@
     "\n",
     "int_range.observe(on_value_change, names='value')"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {
